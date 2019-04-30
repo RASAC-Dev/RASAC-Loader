@@ -227,7 +227,7 @@ bool ProgAlgSpi::Spi_Identify(bool verbose)
                         SectorErase=3;
                         FlashType=GENERIC;
                         break;
-                    case 0x18: /* N25Q128 */
+                    case 0x18: /* N25Q128 */ /* MT25QL128 */
                         Pages=65536;
                         PageSize=256;
                         BulkErase=250;
@@ -353,7 +353,7 @@ bool ProgAlgSpi::Spi_Identify(bool verbose)
                 printf("Found SST Flash (Pages=%d, Page Size=%d bytes, %d bits).\n",Pages,PageSize,Pages*PageSize*8);
             break;			
         default:
-            printf("Uknown Flash Manufacturer (0x%.2x)\n", tdo[1]);
+            printf("Unknown Flash Manufacturer (0x%.2x)\n", tdo[1]);
             return false;
     }
 

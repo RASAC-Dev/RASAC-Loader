@@ -285,19 +285,10 @@ int main(int argc, char **argv)
     }
     catch(io_exception& e)
     {
-	//Try the Papilio DUO before failing
-	try
-	{
-		io.reset(new IOFtdi(vendor, 0x7bc0, desc, serial, subtype));
-		io->setVerbose(verbose);
-	}
-	catch(io_exception& e2)
-	{
  		fprintf(stderr, "Could not access USB device %04x:%04x."
 		  " If this is linux then make sure you can access the "
 		  " device or use sudo.\n",vendor, product);
         	return 1;
-	}
     }
 
     Jtag jtag = Jtag(io.operator->());
@@ -307,7 +298,7 @@ int main(int argc, char **argv)
     id = get_id (jtag, db, chainpos, true);
     if (id == 0)
       return 1;
-    family = (id>>21) & 0x7f;
+    family = (id>>21) & 0x7f; // UG332(250) & UG470(89)
     manufacturer = (id>>1) & 0x3ff;
     if(detectchain)
         return 0;

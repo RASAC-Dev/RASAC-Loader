@@ -49,6 +49,7 @@ ProgAlgXC3S::ProgAlgXC3S(Jtag &j, IOBase &i, int fam)
     case 0x13: /* XC3SAN*/
     case 0x1c: /* SC3SADSP*/
     case 0x20: /* XC6S*/
+	//case 0x1b: /* XC7A */
       tck_len = 16;
       array_transfer_len = 16;
       break;
