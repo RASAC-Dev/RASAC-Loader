@@ -60,7 +60,7 @@ import net.gadgetfactory.papilio.loader.LoaderProject.PPJProject;
 
 public class PapilioLoader extends JFrame implements ActionListener
 {
-	private static final String LOADER_NAME = "Papilio Loader 2.8";
+	private static final String LOADER_NAME = "RASAC Loader 1.6";
 	public static final String AUTO_DETECT_FPGA = "Auto-detect onboard FPGA device";
 	public static final boolean DEBUG = false;
 	public static final boolean ECHO_COMMAND = false;
@@ -217,14 +217,14 @@ public class PapilioLoader extends JFrame implements ActionListener
 		if (runningonWindows)
 		{
 			programmerPath = new File(rootProgrammerPath, "win32");
-			papilioProgrammerFile = new File(programmerPath, "papilio-prog.exe");
+			papilioProgrammerFile = new File(programmerPath, "rasac-prog.exe");
 			srecCatFile = new File(programmerPath, "srec_cat.exe");
 			dataToMemFile = new File(programmerPath, "data2mem.exe");
 		}
 		else
 		{
 			programmerPath = new File(rootProgrammerPath, "linux32");
-			papilioProgrammerFile = new File(programmerPath, "papilio-prog");
+			papilioProgrammerFile = new File(programmerPath, "rasac-prog");
 			srecCatFile = new File(programmerPath, "srec_cat");
 			dataToMemFile = new File(programmerPath, "data2mem");
 		}
