@@ -1,6 +1,6 @@
-bin_PROGRAMS = papilio-prog
+bin_PROGRAMS = rasac-prog
 
-papilio_prog_SOURCES = butterfly.cpp \
+rasac_prog_SOURCES = main.cpp \
 	bitfile.cpp \
 	devicedb.cpp \
 	iobase.cpp \
